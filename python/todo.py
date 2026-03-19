@@ -11,7 +11,16 @@ def add_task(task):
     """
 
 def list_tasks():
-    return
+    
+    with open (TASK_FILE, "r") as file:
+        tasks = file.readlines()
+        counter = 1
+        output_string = ""
+        for task in tasks:
+            output_string = output_string + str(counter)+". "+task
+            counter = counter + 1
+            
+    return output_string.rstrip('\n')
 
 
 def remove_task(index):
