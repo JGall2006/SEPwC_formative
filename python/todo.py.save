@@ -11,8 +11,6 @@ def add_task(task):
     """ 
     with open("TASK_FILE", "a") as file:
         file.write(task + "\n")
-        
-        #if i am on my branch this should be here 
 
     return    
     
