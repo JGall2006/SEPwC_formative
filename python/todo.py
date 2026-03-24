@@ -9,8 +9,10 @@ def add_task(task):
     Input - a task to add to the list
     Return - nothing
     """ 
-    with open("TASK_FILE", "a") as file:
+    with open(TASK_FILE, "a") as file:
         file.write(task + "\n")
+        
+        
         
         #if i am on my branch this should be here 
 
