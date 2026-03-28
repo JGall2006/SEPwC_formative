@@ -34,6 +34,10 @@ def list_tasks():
 
 
 def remove_task(index):
+    
+    with open (TASK_FILE, "w"):
+        file.remove(task)
+    
     return
 
 def main():
