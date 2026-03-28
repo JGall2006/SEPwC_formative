@@ -35,18 +35,13 @@ def list_tasks():
 
 def remove_task(index):
     try:
-        # 1. Read the current tasks
         with open(TASK_FILE, "r") as file:
-            lines = file.readlines()
+            lines = file.readlines() #TASK_FILE is read :)
             
-        # 2. Check if the index is within the actual list range
-        # (The test specifically checks 0 and 10 to see if they are ignored)
         if 0 < index <= len(lines):
-            # pop() removes the item at the specific index
-            removed = lines.pop(index - 1)
+            removed = lines.pop(index - 1) #removes the old code in according the index, sees how long the index is too
             
-            # 3. Save the new list back to the file
-            with open(TASK_FILE, "w") as file:
+            with open(TASK_FILE, "w") as file: #w overwrites any old data hence deletes it
                 file.writelines(lines)
             
             # Optional: Print confirmation to the terminal
@@ -56,10 +51,7 @@ def remove_task(index):
             print("sorry, there is no task to remove")
 
     except FileNotFoundError:
-        print("Error, no tasks found. Create one!!")
-        
-#should delete a task and replaice it with text saying nothing
-        
+        print("Error, no tasks found. Create one!!")               
     
     return
 
