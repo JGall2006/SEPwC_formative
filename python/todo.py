@@ -35,8 +35,24 @@ def list_tasks():
 
 def remove_task(index):
     
-    with open (TASK_FILE, "w"):
-        file.remove(task)
+    with open (TASK_FILE, "r") as file:
+        lines = file.readlines()
+        
+    if 0 < index <= len(lines):
+        removed = lines.pop(index - 1)
+        
+    with open(TASK_FILE, "w") as file:
+        file.writelines(lines)
+        print(file"Removed: {removed.strip()}")
+    
+    else:
+        print("sorry, there is no task to remove")
+        
+except FileNotFoundError:
+    print("Error, no tasks found. Create one!!")
+        
+#should delete a task and replaice it with text saying nothing
+        
     
     return
 
