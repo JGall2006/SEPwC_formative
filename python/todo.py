@@ -14,6 +14,9 @@ Return - nothing"""
     return
 
 def list_tasks():
+    """Function: list_tasks
+Imput -l
+output shows a list of the items in list"""
 
     with open (TASK_FILE,"r", encoding="utf-8") as file:
         tasks = file.readlines()
