@@ -27,6 +27,10 @@ def list_tasks():
 
 
 def remove_task(index):
+    """function: remove_task,
+Imput -r index to remove a task
+Return Removed.."""
+
     try:
         with open(TASK_FILE, "r", encoding="utf-8") as file:
             lines = file.readlines() #TASK_FILE is read :)
@@ -34,12 +38,11 @@ def remove_task(index):
         if 0 < index <= len(lines):
             removed = lines.pop(index - 1) #removes lines according to index
 
-            with open(TASK_FILE, "w", encoding="utf-8") as file: #w overwrites any old data
+            with open(TASK_FILE, "w", encoding="utf-8") as file: #w overwrites
                 file.writelines(lines)
 
             print(f"Removed: {removed.strip()}")
         else:
-            # This handles the "0" and "10" cases from your test
             print("sorry, there is no task to remove")
 
     except FileNotFoundError:
