@@ -11,8 +11,6 @@ Return - nothing"""
     with open(TASK_FILE, "a", encoding="utf-8") as file:
         file.write(task + "\n")
 
-    return
-
 def list_tasks():
     """Function: list_tasks
 Imput -l
@@ -51,9 +49,10 @@ Return Removed.."""
     except FileNotFoundError:
         print("Error, no tasks found. Create one!!")
 
-    return
-
 def main():
+    """parser allowing command line arguments,
+imput -a (add),-l (list),-r (remove)
+output allows user to interact witht the code"""
     parser = argparse.ArgumentParser(description="Command-line Todo List")
     parser.add_argument(
             "-a",
