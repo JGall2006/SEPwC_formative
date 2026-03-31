@@ -1,3 +1,6 @@
+"""Todo.py is a simple GUI based to do list where you can add tasks
+and remove tasks and list them"""
+
 import argparse
 import os
 
