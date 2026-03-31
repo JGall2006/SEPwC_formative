@@ -2,14 +2,13 @@
 and remove tasks and list them"""
 
 import argparse
-import os
 
 TASK_FILE = ".tasks.txt"
 
 def add_task(task):
     """Function: add_task
 Input - a task to add to the list
-Return - nothing""" 
+Return - nothing"""
 
     with open(TASK_FILE, "a", encoding="utf-8") as file:
         file.write(task + "\n")
